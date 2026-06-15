@@ -13,7 +13,7 @@
     }
 
     header {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
       background:
         linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
@@ -30,38 +30,8 @@
 
     h1 {
       margin: 10px 0;
-      font-size: 42px;
+      font-size: 40px;
       text-shadow: 0 0 18px #38bdf8;
-    }
-
-    header p {
-      color: #cbd5e1;
-      font-size: 16px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding: 14px;
-      background: #020617;
-      border-bottom: 1px solid #1e293b;
-      position: sticky;
-      top: 0;
-    }
-
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      border: 1px solid #334155;
-      padding: 8px 14px;
-      border-radius: 999px;
-    }
-
-    nav a:hover {
-      background: #0ea5e9;
-      color: #020617;
     }
 
     main {
@@ -75,8 +45,7 @@
       padding: 22px;
       border: 1px solid #1e293b;
       border-radius: 18px;
-      background: rgba(15, 23, 42, .88);
-      box-shadow: 0 0 24px rgba(56,189,248,.08);
+      background: rgba(15, 23, 42, .9);
     }
 
     h2 {
@@ -96,6 +65,12 @@
       border: 1px solid #334155;
       border-radius: 16px;
       padding: 18px;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 0 18px rgba(56,189,248,.25);
     }
 
     .card h3 {
@@ -113,8 +88,38 @@
       color: #facc15;
     }
 
-    .done {
-      color: #22c55e;
+    .detail {
+      display: none;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #38bdf8;
+      cursor: pointer;
+    }
+
+    .car-header {
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .tab {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: #e2e8f0;
     }
 
     footer {
@@ -131,83 +136,131 @@
   <header>
     <div class="tag">RACING MASTER RESEARCH</div>
     <h1>レーマス研究所</h1>
-    <p>車両研究・セッティング検証・走行データ記録サイト</p>
+    <p>車両主体のセッティング・検証記録サイト</p>
     <p>主任研究員：Z[如月]</p>
   </header>
 
-  <nav>
-    <a href="#cars">車両データ</a>
-    <a href="#settings">セッティング</a>
-    <a href="#problems">症状別研究</a>
-    <a href="#logs">検証ログ</a>
-  </nav>
-
   <main>
-    <section id="cars">
-      <h2>車両データ</h2>
+    <section id="car-list">
+      <h2>車両一覧</h2>
+      <p>研究対象の車両を選択してください。</p>
+
       <div class="grid">
-        <div class="card">
+        <div class="card" onclick="showCar('ae86')">
           <h3>AE86 頭文字D Ver.</h3>
           <p>クラス：スポーツ</p>
-          <p>軽量FR。安定性が高く、復帰も扱いやすい研究基準車。</p>
+          <p>駆動：FR</p>
           <span class="status">研究中</span>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="showCar('atsv')">
           <h3>ATS-V</h3>
           <p>クラス：パフォーマンス</p>
-          <p>低〜中速の空転と復帰時の安定性を重点研究中。</p>
+          <p>駆動：FR</p>
           <span class="status">研究中</span>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="showCar('mustang')">
           <h3>Mustang GT '19</h3>
           <p>クラス：パフォーマンス</p>
-          <p>フットブレーキ進入と直線復帰を検証中。</p>
+          <p>駆動：FR</p>
           <span class="status">研究中</span>
         </div>
       </div>
     </section>
 
-    <section id="settings">
-      <h2>セッティング研究</h2>
-      <div class="card">
-        <h3>万能型セッティング方針</h3>
-        <p>峠・市街地・高速がランダムに来ても走れるように、車の個性を残しつつ弱点を補正する。</p>
+    <section id="ae86" class="detail">
+      <span class="back" onclick="showList()">← 車両一覧へ戻る</span>
+
+      <div class="car-header">
+        <h2>AE86 頭文字D Ver.</h2>
+        <p>スポーツ / FR / 880kg</p>
+        <span class="status">研究中</span>
       </div>
+
+      <div class="tabs">
+        <span class="tab">車両情報</span>
+        <span class="tab">セッティング</span>
+        <span class="tab">症状別研究</span>
+        <span class="tab">検証ログ</span>
+      </div>
+
+      <h2>車両情報</h2>
+      <p>軽量FR。安定性が高く、復帰性能を中心に研究中。</p>
+      <p>エンジン：4A-GE 1.6L NA</p>
+      <p>出力：240hp</p>
+      <p>トルク：145Nm</p>
     </section>
 
-    <section id="problems">
-      <h2>症状別研究</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>低速で滑る</h3>
-          <p>後輪グリップ、アクセル開度、車高バランスを確認。</p>
-        </div>
+    <section id="atsv" class="detail">
+      <span class="back" onclick="showList()">← 車両一覧へ戻る</span>
 
-        <div class="card">
-          <h3>曲がらない</h3>
-          <p>フットブレーキ、前輪接地感、進入角度を確認。</p>
-        </div>
-
-        <div class="card">
-          <h3>復帰で暴れる</h3>
-          <p>後輪幅、トレッド、赤ドリフト復帰タイミングを検証。</p>
-        </div>
+      <div class="car-header">
+        <h2>ATS-V</h2>
+        <p>パフォーマンス / FR / 1678kg</p>
+        <span class="status">研究中</span>
       </div>
+
+      <div class="tabs">
+        <span class="tab">車両情報</span>
+        <span class="tab">セッティング</span>
+        <span class="tab">症状別研究</span>
+        <span class="tab">検証ログ</span>
+      </div>
+
+      <h2>車両情報</h2>
+      <p>低〜中速の空転と復帰時の安定性を中心に研究中。</p>
+      <p>エンジン：LF4 V6 3.6L ツインターボ</p>
+      <p>出力：464hp</p>
+      <p>トルク：603Nm</p>
     </section>
 
-    <section id="logs">
-      <h2>検証ログ</h2>
-      <div class="card">
-        <h3>今後の研究予定</h3>
-        <p>研究済みバッジ構想、車両データベース、キット別挙動比較、赤ドリフト復帰検証。</p>
+    <section id="mustang" class="detail">
+      <span class="back" onclick="showList()">← 車両一覧へ戻る</span>
+
+      <div class="car-header">
+        <h2>Mustang GT '19</h2>
+        <p>パフォーマンス / FR / 1681kg</p>
+        <span class="status">研究中</span>
       </div>
+
+      <div class="tabs">
+        <span class="tab">車両情報</span>
+        <span class="tab">セッティング</span>
+        <span class="tab">症状別研究</span>
+        <span class="tab">検証ログ</span>
+      </div>
+
+      <h2>車両情報</h2>
+      <p>フットブレーキ進入と直線復帰を中心に研究中。</p>
+      <p>エンジン：V8 5.0L NA</p>
+      <p>出力：460hp</p>
+      <p>トルク：570Nm</p>
     </section>
   </main>
 
   <footer>
-    レーマス研究所 / Z[如月] Racing Master Laboratory
+    レーマス研究所 Ver.0.0 / 主任研究員：Z[如月]
   </footer>
+
+  <script>
+    function showCar(id) {
+      document.getElementById("car-list").style.display = "none";
+
+      const details = document.querySelectorAll(".detail");
+      details.forEach(detail => detail.style.display = "none");
+
+      document.getElementById(id).style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+    function showList() {
+      const details = document.querySelectorAll(".detail");
+      details.forEach(detail => detail.style.display = "none");
+
+      document.getElementById("car-list").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+  </script>
 </body>
 </html>
