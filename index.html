@@ -1,15 +1,213 @@
-レーマス研究所
-by Z[如月]
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レーマス研究所</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #080b10, #111827);
+      color: #f1f5f9;
+    }
 
-レーシングマスターの
-車両研究・セッティング研究・検証記録サイト
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
+        radial-gradient(circle at top, #2563eb, transparent 45%);
+      border-bottom: 2px solid #38bdf8;
+    }
 
-【車両データ】
-AE86 頭文字D Ver.
-ATS-V
-Mustang GT '19
+    .tag {
+      color: #38bdf8;
+      letter-spacing: 4px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-【研究中】
-・研究済みバッジ構想
-・車両データベース
-・症状別セッティング
+    h1 {
+      margin: 10px 0;
+      font-size: 42px;
+      text-shadow: 0 0 18px #38bdf8;
+    }
+
+    header p {
+      color: #cbd5e1;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 14px;
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      border: 1px solid #334155;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: #0ea5e9;
+      color: #020617;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 28px 18px;
+    }
+
+    section {
+      margin-bottom: 28px;
+      padding: 22px;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, .88);
+      box-shadow: 0 0 24px rgba(56,189,248,.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      border-left: 5px solid #38bdf8;
+      padding-left: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #7dd3fc;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: #1e293b;
+      color: #facc15;
+    }
+
+    .done {
+      color: #22c55e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="tag">RACING MASTER RESEARCH</div>
+    <h1>レーマス研究所</h1>
+    <p>車両研究・セッティング検証・走行データ記録サイト</p>
+    <p>by Z[如月]</p>
+  </header>
+
+  <nav>
+    <a href="#cars">車両データ</a>
+    <a href="#settings">セッティング</a>
+    <a href="#problems">症状別研究</a>
+    <a href="#logs">検証ログ</a>
+  </nav>
+
+  <main>
+    <section id="cars">
+      <h2>車両データ</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AE86 頭文字D Ver.</h3>
+          <p>クラス：スポーツ</p>
+          <p>軽量FR。安定性が高く、復帰も扱いやすい研究基準車。</p>
+          <span class="status done">研究済み</span>
+        </div>
+
+        <div class="card">
+          <h3>ATS-V</h3>
+          <p>クラス：パフォーマンス</p>
+          <p>低〜中速の空転と復帰時の安定性を重点研究中。</p>
+          <span class="status">研究中</span>
+        </div>
+
+        <div class="card">
+          <h3>Mustang GT '19</h3>
+          <p>クラス：パフォーマンス</p>
+          <p>フットブレーキ進入と直線復帰を検証中。</p>
+          <span class="status">研究中</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings">
+      <h2>セッティング研究</h2>
+      <div class="card">
+        <h3>万能型セッティング方針</h3>
+        <p>峠・市街地・高速がランダムに来ても走れるように、車の個性を残しつつ弱点を補正する。</p>
+      </div>
+    </section>
+
+    <section id="problems">
+      <h2>症状別研究</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>低速で滑る</h3>
+          <p>後輪グリップ、アクセル開度、車高バランスを確認。</p>
+        </div>
+
+        <div class="card">
+          <h3>曲がらない</h3>
+          <p>フットブレーキ、前輪接地感、進入角度を確認。</p>
+        </div>
+
+        <div class="card">
+          <h3>復帰で暴れる</h3>
+          <p>後輪幅、トレッド、赤ドリフト復帰タイミングを検証。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="logs">
+      <h2>検証ログ</h2>
+      <div class="card">
+        <h3>今後の研究予定</h3>
+        <p>研究済みバッジ構想、車両データベース、キット別挙動比較、赤ドリフト復帰検証。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    レーマス研究所 / Z[如月] Racing Master Laboratory
+  </footer>
+</body>
+</html>
