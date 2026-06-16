@@ -1,4 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE86（頭文字D Ver） - レーマス研究所</title>
+<style>
+body {margin: 0;font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #080b10, #111827);
+  color: #f1f5f9;
+}
+header {padding: 50px 20px;text-align: center;background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
+    radial-gradient(circle at top, #2563eb, transparent 45%);
+  border-bottom: 2px solid #38bdf8;
+}
+.tag {color: #38bdf8;letter-spacing: 4px;
+  font-size: 14px;font-weight: bold;
+}
+h1 {margin: 10px 0;font-size: 40px;text-shadow: 0 0 18px #38bdf8;
+}
+main {max-width: 1050px;margin: auto;padding: 28px 18px;
+}
+section {margin-bottom: 28px;padding: 22px;border: 1px solid #1e293b;
+  border-radius: 18px;background: rgba(15, 23, 42, .9);
+}
+h2 {margin-top: 0;border-left: 5px solid #38bdf8;padding-left: 12px;
+}
+/* レアリティ */
+.card.legacy,
+.car-header.legacy {--neon: linear-gradient(135deg, #00e5ff, #22c55e, #facc15, #fb7185, #a855f7);
+  --glow: rgba(56, 189, 248, .75);
+}
+.card.legend,
+.car-header.legend {--neon: linear-gradient(135deg, #facc15, #f59e0b);
+  --glow: rgba(250, 204, 21, .75);
+}
+.card.rare,
+.car-header.rare {--neon: linear-gradient(135deg, #a855f7, #d946ef);
+  --glow: rgba(168, 85, 247, .75);
+}
+.card.normal,
+.car-header.normal {--neon: linear-gradient(135deg, #ffffff, #cbd5e1);
+  --glow: rgba(255, 255, 255, .55);
+}
+/* メーカー名 */
+.car-maker {display: inline-block;padding: 3px 8px;margin-bottom: 8px;
+  border: 1px solid #334155;border-radius: 999px;
+  font-size: 12px;color: #94a3b8;background: #0f172a;
+}
+.status {display: inline-block;margin-top: 8px;padding: 5px 10px;
+  border-radius: 999px;font-size: 13px;background: #1e293b;color: #facc15;
+}
+.back {
+  display: inline-block;margin-bottom: 18px;color: #38bdf8;cursor: pointer;
+}
+.car-header {position: relative;overflow: hidden;background: #020617;
+  border: 1px solid #334155;border-radius: 16px;padding: 20px;margin-bottom: 20px;
+}
+.car-header::before {content: "";position: absolute;inset: 0;
+  border-radius: 16px;padding: 2px;background: var(--neon);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);-webkit-mask-composite: xor;mask-composite: exclude;
 
+  opacity: .85;pointer-events: none;
+}
+.car-header::after {content: "";position: absolute;inset: 0;border-radius: 16px;
+  box-shadow: 0 0 18px var(--glow);opacity: .65;pointer-events: none;
+}
+.car-official-name {margin: 4px 0 12px;color: #b6d4fe;font-size: 14px;
+}
+.car-header .car-official-name {padding-left: 12px;
+}
+.tabs {display: flex;flex-wrap: wrap;gap: 10px;margin: 16px 0;
+}
+.tab {padding: 8px 12px;border-radius: 999px;border: 1px solid #334155;
+  background: #0f172a;color: #e2e8f0;
+}
+footer {text-align: center;padding: 28px;color: #94a3b8;
+  border-top: 1px solid #1e293b;background: #020617;
+}
+</style>
 <section>
   <a href="index.html" class="back">← 車両一覧へ戻る</a>
 
