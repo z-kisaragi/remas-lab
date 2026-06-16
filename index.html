@@ -123,13 +123,27 @@
 
 /* ノーマル：白 */
 .card.normal {
-  --neon: linear-gradient(135deg, #ffffff, #cbd5e1);
-  --glow: rgba(255, 255, 255, .55);
+--neon: linear-gradient(135deg, #ffffff, #cbd5e1);
+--glow: rgba(255, 255, 255, .55);
 }
 
-    .card h3 {
-      margin: 0;
-  color: #7dd3fc;
+/* メーカー名 */
+.car-maker {
+display: inline-block;
+padding: 3px 8px;
+margin-bottom: 8px;
+
+border: 1px solid #334155;
+border-radius: 999px;
+
+font-size: 12px;
+color: #94a3b8;
+background: #0f172a;
+}
+
+.card h3 {
+margin: 0;
+color: #7dd3fc;
 }
 
     .status {
@@ -220,7 +234,8 @@
   </div>
 
   <div class="card rare" onclick="showCar('atsv')">
-    <h3>キャデラック（ATS-V）</h3>
+    <div class="car-maker">キャデラック</div>
+  <h3>ATS-V</h3>
     <p class="car-official-name">ギャラティック ATS-V '19</p>
     <p>クラス：パフォーマンス</p>
     <p>駆動：FR</p>
@@ -228,7 +243,8 @@
   </div>
 
   <div class="card rare" onclick="showCar('mustang')">
-    <h3>フォード（Mustang GT '19）</h3>
+    <div class="car-maker">フォード</div>
+  <h3>マスタングGT</h3>
     <p class="car-official-name">Mustang GT '19</p>
     <p>クラス：パフォーマンス</p>
     <p>駆動：FR</p>
@@ -289,7 +305,7 @@
   <span class="back" onclick="showList()">← 車両一覧へ戻る</span>
 
   <div class="car-header">
-    <h2>フォード（Mustang GT '19）</h2>
+    <h2>フォード（マスタングGT）</h2>
     <p class="car-official-name">Mustang GT '19</p>
     <p>パフォーマンス / FR / 1681kg</p>
     <span class="status">研究中</span>
