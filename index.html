@@ -115,31 +115,10 @@ footer {text-align: center;padding: 28px;color: #94a3b8;
       <!-------------------- A-C終了 -------------------->
 </div> <!-- grid終了 -->
 </section>
-    <!-------------------- 車両一覧セクション終了 -------------------->
   </main>
 
   <footer>
     レーマス研究所 Ver.0.0 / 主任研究員：Z[如月]
   </footer>
-
-  <script>
-    function showCar(id) {
-      document.getElementById("car-list").style.display = "none";
-
-      const details = document.querySelectorAll(".detail");
-      details.forEach(detail => detail.style.display = "none");
-
-      document.getElementById(id).style.display = "block";
-      window.scrollTo(0, 0);
-    }
-
-    function showList() {
-      const details = document.querySelectorAll(".detail");
-      details.forEach(detail => detail.style.display = "none");
-
-      document.getElementById("car-list").style.display = "block";
-      window.scrollTo(0, 0);
-    }
-  </script>
 </body>
 </html>
