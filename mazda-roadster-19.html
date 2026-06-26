@@ -81,6 +81,37 @@ h2 {margin-top: 0;margin-bottom: 16px;
 .tab {padding: 8px 12px;border-radius: 999px;border: 1px solid #334155;
   background: #0f172a;color: #e2e8f0;
 }
+/*=========================依存分析フレーム=========================*/
+.dependency-frame {position: relative;margin: 16px 0;
+  padding: 18px 22px;background: #020617;border-radius: 16px;
+}
+/*=========================位置=========================*/
+/* 上 */.dep-top{position:absolute;top:0;
+  left:18px;right:18px;height:3px;
+}
+/* 下 */.dep-bottom{position:absolute;bottom:0;
+  left:18px;right:18px;height:3px;
+}
+/* 左 */.dep-left{position:absolute;top:18px;
+  bottom:18px;left:0;width:3px;
+}
+/* 右 */.dep-right{position:absolute;top:18px;
+  bottom:18px;right:0;width:3px;
+}
+/*=========================色=========================*/
+/* 緑 */.dep-green{background:#22c55e;
+}
+/* 黄 */.dep-yellow{background:#facc15;
+}
+/* 赤 */.dep-red{background:#ef4444;
+}
+/*=========================説明=========================*/
+/*車両*/.dep-text-green {color: #22c55e;
+}
+/*改造*/.dep-text-yellow {color: #facc15;
+}
+/*運転*/.dep-text-red {color: #ef4444;
+}
 footer {text-align: center;padding: 28px;color: #94a3b8;
   border-top: 1px solid #1e293b;background: #020617;
 }
